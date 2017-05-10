@@ -18,22 +18,51 @@ div.Bar button {
 /* Menu bar End */
 
 /* Main Start */
-div.ImageSlide, div.Gallery {
+div.ImageSlide {
+	background-image: url(img\pic1.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+	outline : none;
+	width : 100%;
+	height : 384px;
+}
+
+div.Gallery{
 	background-color : #ffffcc;
 	outline : none;
 	width : 100%;
 	height : 384px;
 }
-div.Introduce, div.Guestbook {
+
+div.Introduce {
 	background-color : #ccffff;
 	outline : none;
 	width : 100%;
 	height : 384px;
 }
+
+div.Guestbook {
+ background-color : #ccffff;
+ outline : none;
+ width : 100%;
+ height : 384px;
+}
 /* Main End */
 
 /* Footer Start */
-footer { 
+footer {
     display: block;
 }
 /* Footer End */
+button:hover{
+  background-color: #dddddd;
+  cursor: pointer;
+}
+ul{
+  list-style: none;
+}
+li{
+  float: left;
+  margin: 30px;
+}
