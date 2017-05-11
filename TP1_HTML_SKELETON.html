@@ -6,9 +6,9 @@
 <title>TP1 in HTML5 Skeleton</title>
 <!-- CSS, JS External 정의 -->
 <link rel="stylesheet" type="text/css" href="./css/TP1_CSS_SKELETON.css">
-
+<script type="text/javascript" src="js\slideshow.js"></script>
 </head>
-<body>
+<body onload="auto()">
 	<!-- 레이아웃은 HTML5 엘리먼트를 사용할 것 -->
 	<header>
 		<!-- Header (Menu bar) -->
@@ -33,23 +33,11 @@
 
 	<main>
 		<div class = "ImageSlide"><a name="ImageSlide"></a>
-			<div class="Slides">
-				<div class="numbertext">1 / 3</div>
-				<img src="img\pic1.png" style="width:100%">
-				<div class="text">Caption Text</div>
-			</div>
-
-			<div class="Slides">
-				<div class="numbertext">2 / 3</div>
-				<img src="img\pic2.png" style="width:100%">
-				<div class="text">Caption Two</div>
-			</div>
-
-			<div class="Slides">
-				<div class="numbertext">3 / 3</div>
-				<img src="img\pic10.png" style="width:100%">
-				<div class="text">Caption Three</div>
-			</div>
+			<img class="Slides" src="img\1.jpeg" style="width:100% height:384px">
+			<img class="Slides" src="img\2.jpg" style="width:100% height:384px">
+			<img class="Slides" src="img\3.jpeg" style="width:100% height:384px">
+			<img class="Slides" src="img\4.jpg" style="width:100% height:384px">
+			<img class="Slides" src="img\5.jpg" style="width:100% height:384px">
 
 			<a class="prev" onclick="plusSlides(-1)"><img src="img\slide_button\left.gif" alt="img\slide_button\left.gif"></a>
 			<a class="next" onclick="plusSlides(1)"><img src="img\slide_button\right.gif" alt="img\slide_button\right.gif"></a>
@@ -61,10 +49,25 @@
 			<span class="dot" onclick="currentSlide(3)"></span>
 			<span class="dot" onclick="currentSlide(4)"></span>
 			<span class="dot" onclick="currentSlide(5)"></span>
-			<span class="dot" onclick="currentSlide(6)"></span>
 		</div>
 
-		<div class = "Introduce"><a name="Introduce"></a>introduce</div>
+		<div class = "Introduce"><a name="Introduce"></a>
+			<table>
+				<thead>
+
+				</thead>
+				<tbody>
+
+				</tbody>
+				<tfoot>
+					<ul id="horizon">
+						<li><a href="http://www.naver.com">NAVER</a></li>
+						<li><a href="http://www.daum.net">DAUM</a></li>
+						<li><a href="http://google.com">GOOGLE</a></li>
+					</ul>
+				</tfoot>
+			</table>
+		</div>
 
 		<div class = "Gallery"><a name="Gallery"></a>>gallery</div>
 
