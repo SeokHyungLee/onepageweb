@@ -7,12 +7,14 @@
 <!-- CSS, JS External 정의 -->
 <link rel="stylesheet" type="text/css" href="./css/TP1_CSS_SKELETON.css">
 <script type="text/javascript" src="js\slideshow.js"></script>
+<script type="text/javascript" src="js\guestAdd.js"></script>
+<script type="text/javascript" src="js\modal.js"></script>
 </head>
 <body onload="auto()">
 	<!-- 레이아웃은 HTML5 엘리먼트를 사용할 것 -->
 	<header>
 		<!-- Header (Menu bar) -->
-		<div class="Bar">
+		<div class="Bar" position="fixed">
 			<button class="Menu"><a href="TP1_HTML_SKELETON.html">HOME</a></button>
 			<button class="Menu"><a href="TP1_HTML_SKELETON.html#ImageSlide">IMAGE SLIDE</a></button>
 			<button class="Menu"><a href="TP1_HTML_SKELETON.html#Introduce">INTRODUCE</a></button>
@@ -33,11 +35,11 @@
 
 	<main>
 		<div class = "ImageSlide"><a name="ImageSlide"></a>
-			<img class="Slides" src="img\1.jpeg" style="width:100% height:384px">
-			<img class="Slides" src="img\2.jpg" style="width:100% height:384px">
-			<img class="Slides" src="img\3.jpeg" style="width:100% height:384px">
-			<img class="Slides" src="img\4.jpg" style="width:100% height:384px">
-			<img class="Slides" src="img\5.jpg" style="width:100% height:384px">
+			<img class="Slides" src="img\1.jpeg">
+			<img class="Slides" src="img\2.jpg">
+			<img class="Slides" src="img\3.jpeg">
+			<img class="Slides" src="img\4.jpg">
+			<img class="Slides" src="img\5.jpg">
 
 			<a class="prev" onclick="plusSlides(-1)"><img src="img\slide_button\left.gif" alt="img\slide_button\left.gif"></a>
 			<a class="next" onclick="plusSlides(1)"><img src="img\slide_button\right.gif" alt="img\slide_button\right.gif"></a>
@@ -52,30 +54,170 @@
 		</div>
 
 		<div class = "Introduce"><a name="Introduce"></a>
-			<table>
+			<table align="center">
 				<thead>
-
+					<tr>
+						<th colspan="3" text-align="center">내가 가고 싶은 도시 소개</th>
+					</tr>
 				</thead>
 				<tbody>
+					<tr>
+						<td rowspan="4"><img src="img\queenstown.png" class="IntroImg"></td>
+						<td>도시이름</td>
+						<td>퀸즈 타운(<i>Queenstown</i>)</td>
+					</tr>
+					<tr>
+						<td>주요 활동</td>
+						<td>스카이 다이빙, 번지 점프 등 각종 레저</td>
+					</tr>
+					<tr>
+						<td>랜드마크</td>
+						<td>   피요르드 랜드</td>
+					</tr>
+					<tr>
+						<td>시차</td>
+						<td>
+							한국시간 : +3시간<br><br>
+							표준시간 : +12시간
+						</td>
+					</tr>
+				</tbody>
 
+				<tbody>
+					<tr>
+						<td rowspan="4"><img src="img\barcelona.jpg" class="IntroImg"></td>
+						<td>도시이름</td>
+						<td>   바르셀로나(<i>Barcelon</i>)</td>
+					</tr>
+					<tr>
+						<td>주요 행사</td>
+						<td><a href="https://ko.wikipedia.org/wiki/%EC%97%98_%ED%81%B4%EB%9D%BC%EC%8B%9C%EC%BD%94">엘 클라시코 (<i>El Clásico</i>)</a></td>
+					</tr>
+					<tr>
+						<td>랜드마크</td>
+						<td>가우디</td>
+					</tr>
+					<tr>
+						<td>시차</td>
+						<td>
+							한국시간 : -7시간<br><br>
+							표준시간 : +2시간
+						</td>
+					</tr>
+				</tbody>
+
+				<tbody>
+					<tr>
+						<td rowspan="4"><img src="img\Munich.jpg" class="IntroImg"></td>
+						<td>도시이름</td>
+						<td>뮌헨 (<i>Munichi>)</td>
+					</tr>
+					<tr>
+						<td>주요 행사</td>
+						<td><a href="https://ko.wikipedia.org/wiki/%EC%98%A5%ED%86%A0%EB%B2%84%ED%8E%98%EC%8A%A4%ED%8A%B8">옥토버 페스트(<i>Oktoberfest</i>)</a></td>
+					</tr>
+					<tr>
+						<td>랜드마크</td>
+						<td>마리엔 광장</td>
+					</tr>
+					<tr>
+						<td>시차</td>
+						<td>
+							한국시간 : -7시간<br><br>
+							표준시간 : +2시간
+						</td>
+					</tr>
 				</tbody>
 				<tfoot>
-					<ul id="horizon">
-						<li><a href="http://www.naver.com">NAVER</a></li>
-						<li><a href="http://www.daum.net">DAUM</a></li>
-						<li><a href="http://google.com">GOOGLE</a></li>
-					</ul>
+					<tr>
+						<td colspan="3" align="center">
+							<ul id="horizon">
+								<li><a href="http://www.naver.com">NAVER</a></li>
+								<li><a href="http://www.daum.net">DAUM</a></li>
+								<li><a href="http://google.com">GOOGLE</a></li>
+							</ul>
+						</td>
+					</tr>
 				</tfoot>
 			</table>
 		</div>
 
-		<div class = "Gallery"><a name="Gallery"></a>>gallery</div>
 
-		<div class = "Guestbook"><a name="Guestbook"></a>guest book</div>
+		<div class = "Gallery"><a name="Gallery"></a>
+			<table>
+				<tr>
+					<td>
+						<img src="img\gallary1.jpg" id="modal_1">
+						<div class="modal" id="myModal_1">
+							<span class="close" onclick="document.getElementById('myModal_1').style.display='none'"><img src="img\modal_button\x.PNG" ></span>
+							<img class="modal-content" id="modal_img01">
+
+							<!-- Modal Caption (Image Text) -->
+							<div id="caption_1"></div>
+						</div>
+					</td>
+					<td>
+						<img src="img\gallary2.jpg" id="modal_2">
+						<div class="modal">
+
+						</div>
+					</td>
+					<td>
+						<img src="img\gallary3.jpg" id="modal_3">
+						<div class="modal">
+
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="img\gallary4.jpg" id="modal_4">
+						<div class="modal">
+
+						</div>
+					</td>
+					<td>
+						<img src="img\gallary5.jpg" id="modal_5">
+						<div class="modal">
+
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+
+
+		<div class = "Guestbook"><a name="Guestbook"></a>
+			<table>
+				<tr>
+					<th colspan="2" align="center">방명록</th>
+				</tr>
+				<tr>
+					<td>작성자</td>
+					<td><input type="text" id="author"></td>
+				</tr>
+				<tr>
+					<td>내용</td>
+					<td><textarea id="contain" rows="8" cols="80"></textarea></td>
+				</tr>
+			</table>
+			<button onclick="guestAdd()">등록</button>
+		</div>
+
+		<div class="showGuestbook">
+			<table id="insertTable">
+				<tr>
+					<th width="150">작 성 자</th>
+					<th width="500"> 내 용 </th>
+				</tr>
+			</table>
+		</div>
 	</main>
 
 	<footer>
-		<p>footer</p>
+		<p align="center">posted by <i> 충남대학교 </i>, <i> 201203435 </i>, <b> 이 석 형 </b>,  leesh6711@naver.com</p>
 	</footer>
 
 </body>
