@@ -14,7 +14,7 @@
 	<!-- 레이아웃은 HTML5 엘리먼트를 사용할 것 -->
 	<header>
 		<!-- Header (Menu bar) -->
-		<div class="Bar" position="fixed">
+		<div class="Bar">
 			<button class="Menu"><a href="TP1_HTML_SKELETON.html">HOME</a></button>
 			<button class="Menu"><a href="TP1_HTML_SKELETON.html#ImageSlide">IMAGE SLIDE</a></button>
 			<button class="Menu"><a href="TP1_HTML_SKELETON.html#Introduce">INTRODUCE</a></button>
@@ -22,7 +22,7 @@
 			<button class="Menu"><a href="TP1_HTML_SKELETON.html#Guestbook">GUEST BOOK</a></button>
 			<div class="dropDown">
 				<button class="dropbtn"><img src="img\modal_button\menubar.PNG" alt="img\modal_button\menubar.PNG"></button>
-				<div class="dropDown-content" style="float:right">
+				<div class="dropDown-content" >
 					<a href="TP1_HTML_SKELETON.html">HOME</a></button>
 					<a href="TP1_HTML_SKELETON.html#ImageSlide">IMAGE SLIDE</a>
 					<a href="TP1_HTML_SKELETON.html#Introduce">INTRODUCE</a>
@@ -62,7 +62,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td rowspan="4"><img src="img\queenstown.png" class="IntroImg"></td>
+						<td rowspan="4"><img src="img\queenstown.png" class="IntroImg" style="width:100%"></td>
 						<td>도시이름</td>
 						<td>퀸즈 타운(<i>Queenstown</i>)</td>
 					</tr>
@@ -72,7 +72,7 @@
 					</tr>
 					<tr>
 						<td>랜드마크</td>
-						<td>   피요르드 랜드</td>
+						<td><a href="https://ko.wikipedia.org/wiki/%ED%94%BC%EC%98%A4%EB%A5%B4%EB%93%9C%EB%9E%9C%EB%93%9C_%EA%B5%AD%EB%A6%BD%EA%B3%B5%EC%9B%90">   피요르드 랜드</a></td>
 					</tr>
 					<tr>
 						<td>시차</td>
@@ -85,9 +85,9 @@
 
 				<tbody>
 					<tr>
-						<td rowspan="4"><img src="img\barcelona.jpg" class="IntroImg"></td>
+						<td rowspan="4"><img src="img\barcelona.jpg" class="IntroImg" style="width:100%"></td>
 						<td>도시이름</td>
-						<td>   바르셀로나(<i>Barcelon</i>)</td>
+						<td>   바르셀로나(<i>Barcelona</i>)</td>
 					</tr>
 					<tr>
 						<td>주요 행사</td>
@@ -108,9 +108,9 @@
 
 				<tbody>
 					<tr>
-						<td rowspan="4"><img src="img\Munich.jpg" class="IntroImg"></td>
+						<td rowspan="4"><img src="img\Munich.jpg" class="IntroImg" style="width:100%"></td>
 						<td>도시이름</td>
-						<td>뮌헨 (<i>Munichi>)</td>
+						<td>뮌헨 (<i>Munich<i>)</td>
 					</tr>
 					<tr>
 						<td>주요 행사</td>
@@ -143,48 +143,89 @@
 		</div>
 
 
-		<div class = "Gallery"><a name="Gallery"></a>
-			<table>
-				<tr>
-					<td>
-						<img src="img\gallary1.jpg" id="modal_1">
-						<div class="modal" id="myModal_1">
-							<span class="close" onclick="document.getElementById('myModal_1').style.display='none'"><img src="img\modal_button\x.PNG" ></span>
-							<img class="modal-content" id="modal_img01">
 
-							<!-- Modal Caption (Image Text) -->
-							<div id="caption_1"></div>
-						</div>
-					</td>
-					<td>
-						<img src="img\gallary2.jpg" id="modal_2">
-						<div class="modal">
+		  <div class = "Gallery"><a name="Gallery"></a>
+		    <div class="column" >
+		      <img src="img\gallary1.jpg"  onclick="openModal();currentModalSlide(1)" class="hover-shadow">
+					<img src="img\modal_button\x.PNG" style="position:relative; top:0px; right:0px; z-index:1">
+		    </div>
+		    <div class="column">
+		      <img src="img\gallary2.jpg"  onclick="openModal();currentModalSlide(2)" class="hover-shadow">
+					<img src="img\modal_button\x.PNG" style="position:relative; top:0px; right:0px; z-index:1">
+		    </div>
+		    <div class="column">
+		      <img src="img\gallary3.jpg"  onclick="openModal();currentModalSlide(3)" class="hover-shadow">
+					<img src="img\modal_button\x.PNG" style="position:relative; top:0px; right:0px; z-index:1">
+		    </div>
+		    <div class="column">
+		      <img src="img\gallary4.jpg"  onclick="openModal();currentModalSlide(4)" class="hover-shadow">
+					<img src="img\modal_button\x.PNG" style="position:relative; top:0px; right:0px; z-index:1">
+		    </div>
+		    <div class="column">
+		      <img src="img\gallary5.jpg"  onclick="openModal();currentModalSlide(5)" class="hover-shadow">
+					<img src="img\modal_button\x.PNG" style="position:relative; top:0px; right:0px; z-index:1">
+		    </div>
 
-						</div>
-					</td>
-					<td>
-						<img src="img\gallary3.jpg" id="modal_3">
-						<div class="modal">
 
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<img src="img\gallary4.jpg" id="modal_4">
-						<div class="modal">
+		    <div id="myModal" class="modal">
+		      <span class="close cursor" onclick="closeModal()">&times;</span>
+		      <div class="modal-content">
 
-						</div>
-					</td>
-					<td>
-						<img src="img\gallary5.jpg" id="modal_5">
-						<div class="modal">
+		        <div class="mySlides">
+		          <div class="numbertext">1 / 5</div>
+		          <img src="img\gallary1.jpg" style="width:100%">
+		        </div>
 
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
+		        <div class="mySlides">
+		          <div class="numbertext">2 / 5</div>
+		          <img src="img\gallary2.jpg" style="width:100%">
+		        </div>
+
+		        <div class="mySlides">
+		          <div class="numbertext">3 / 5</div>
+		          <img src="img\gallary3.jpg" style="width:100%">
+		        </div>
+
+		        <div class="mySlides">
+		          <div class="numbertext">4 / 5</div>
+		          <img src="img\gallary4.jpg" style="width:100%">
+		        </div>
+
+		        <div class="mySlides">
+		          <div class="numbertext">5 / 5</div>
+		          <img src="img\gallary5.jpg" style="width:100%">
+		        </div>
+
+		        <a class="prev" onclick="plusModalSlides(-1)">&#10094;</a>
+		        <a class="next" onclick="plusModalSlides(1)">&#10095;</a>
+
+		        <div class="caption-container">
+		          <p id="caption"></p>
+		        </div>
+
+		        <div class="column">
+		          <img class="demo" src="img\gallary1.jpg" width="70%" onclick="currentModalSlide(1)" alt="Gallery1">
+		        </div>
+
+		        <div class="column">
+		          <img class="demo" src="img\gallary2.jpg" width="70%" onclick="currentModalSlide(2)" alt="Gallery2">
+		        </div>
+
+		        <div class="column">
+		          <img class="demo" src="img\gallary3.jpg"src="img\gallary1.jpg" width="70%" onclick="currentModalSlide(3)" alt="Gallery3">
+		        </div>
+
+		        <div class="column">
+		          <img class="demo" src="img\gallary4.jpg" width="70%" onclick="currentModalSlide(4)" alt="Gallery4">
+		        </div>
+
+		        <div class="column">
+		          <img class="demo" src="img\gallary5.jpg" width="70%" onclick="currentModalSlide(5)" alt="Gallery5">
+		        </div>
+
+		      </div>
+		    </div>
+		  </div>
 
 
 
@@ -200,7 +241,7 @@
 				</tr>
 				<tr>
 					<td>내용</td>
-					<td><textarea id="contain" rows="8" cols="80"></textarea></td>
+					<td colspan="2"><textarea id="contain" rows="8" cols="80"></textarea></td>
 				</tr>
 			</table>
 			<button onclick="guestAdd()">등록</button>
@@ -217,7 +258,7 @@
 	</main>
 
 	<footer>
-		<p align="center">posted by <i> 충남대학교 </i>, <i> 201203435 </i>, <b> 이 석 형 </b>,  leesh6711@naver.com</p>
+		<p align="center">posted by <i> 충남대학교 </i><br><br> <i> 201203435 </i>, <b> 이 석 형 </b><br><br>  leesh6711@naver.com</p>
 	</footer>
 
 </body>

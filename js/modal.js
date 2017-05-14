@@ -1,20 +1,36 @@
-// Get the modal
-var modal = document.getElementById('myModal_1');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('modal_1');
-var modalImg = document.getElementById("modal_img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
 }
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+var modalSlideIndex = 1;
+showModalSlides(modalSlideIndex);
+
+function plusModalSlides(n) {
+  showModalSlides(modalSlideIndex += n);
+}
+
+function currentModalSlide(n) {
+  showModalSlides(modalSlideIndex = n);
+}
+
+function showModalSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {modalSlideIndex = 1}
+  if (n < 1) {modalSlideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[modalSlideIndex-1].style.display = "block";
+  dots[modalSlideIndex-1].className += " active";
+  captionText.innerHTML = dots[modalSlideIndex-1].alt;
 }
